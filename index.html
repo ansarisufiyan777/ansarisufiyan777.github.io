@@ -1,755 +1,481 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <title>Sufiyan Ansari</title>
-    <!-- Meta tag Keywords -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
-    <meta name="keywords"
-        content="Recognize Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
+    <title>Page</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cv.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script>
+      const resume = {
+        name: "Sufiyan Nafees Ansari",
+        title: "Fullstack Engineer",
+        contact: {
+          phones: ["🇮🇳 (+91) 98705 01929", "🇫🇷 (+33) 06 64 98 84 68"],
+          location: "Strasbourg, France",
+          email: "ansarisufiyan777@gmail.com",
+          website: "https://sufiyan.xyz",
+        },
+        education: [
+          {
+            degree: "Masters Degree in Computer Application",
+            institution: "Mumbai University",
+            cgpa: "7.9",
+            years: "2014 – 2017",
+          },
+          {
+            degree: "Bachelor in Information Technology",
+            institution: "Mumbai University",
+            cgpa: "7.1",
+            years: "2011 – 2014",
+          },
+        ],
+        languages: [
+          { name: "Python", level: 85 },
+          { name: "React", level: 90 },
+          { name: "Angular", level: 80 },
+          { name: "JavaScript", level: 70 },
+          { name: "SQL", level: 60 },
+        ],
+        tools: [
+          "Docker",
+          "Git",
+          "Celery",
+          "RabbitMQ",
+          "VS Code",
+          "IntelliJ",
+          "Jira",
+          "Linear",
+          "Slack",
+          "Notion",
+          "Figma",
+        ],
+        social: {
+          github: "https://github.com/ansarisufiyan777",
+          linkedin: "https://www.linkedin.com/in/ansarisufiyan777/",
+          stackoverflow:
+            "https://stackoverflow.com/users/3443247/sufiyan-ansari",
+          npm: "https://www.npmjs.com/~ansarisufiyan",
+        },
+        successes: [
+          {
+            title: "Publication:IRJET",
+            link: "https://www.irjet.net/papers/IRJET-V7I12-1000147.pdf",
+          },
+          {
+            title: "VA's Hackathon 2020 Winner",
+          },
+        ],
+        about:
+          "Fullstack engineer with {{experience}}+ years of experience in building scalable web applications, specializing in React, Python, and cloud technologies. Proven track record in e-commerce, fintech, and AI solutions.",
+        domainExpertise: [
+          "E-commerce & Customer Support",
+          "Fintech & Trading Systems",
+          "AI & Conversational Systems",
+          "Enterprise Solutions",
+          "Real-time Analytics",
+          "Microservices Architecture",
+          "Cloud Infrastructure",
+          "Mobile Development",
+          "Space Technology",
+        ],
+        experience: [
+          {
+            role: "Senior Full Stack Engineer",
+            company: "Gorgias",
+            period: "May 2023 - Present",
+            description:
+              "At Gorgias, I work as a fullstack engineer, building and scaling features across both backend and frontend. I collaborate with product and engineering teams to deliver reliable, high-quality experiences that empower merchants and improve customer support workflows.",
+          },
+          {
+            role: "Software Engineer II",
+            company: "Leanspace",
+            period: "Aug 2022 - May 2023",
+            description:
+              "Worked as a senior frontend react engineer on the core product and continued with designing the solution for onboarding customers.",
+          },
+          {
+            role: "Software Engineer II",
+            company: "e-bot7",
+            period: "Feb 2022 - Jul 2022",
+            description:
+              "Worked on Micro frontend, and Python Serverless framework with AWS cloud platform to achieve the conversational AI bot engine functionality",
+          },
+          {
+            role: "Technical Architect",
+            company: "Colgate-Palmolive",
+            period: "Sep 2021 - Feb 2022",
+            description:
+              "Worked on React, and Python to manage the SKU's pricings across 200 countries in the world.",
+          },
+          {
+            role: "Software Engineer II",
+            company: "Visible Alpha",
+            period: "Jun 2019 - Aug 2021",
+            description:
+              "Worked on React & Python to manage the Buy/Sell side entitlements Dockerised everything into a Linux container. Celery (RabbitMQ) to process millions of tasks. Worked on Salesforce data integration with the Insights Product. Initiated the React Native Mobile App for Insights product",
+          },
+          {
+            role: "Software Engineer",
+            company: "Indus Valley Partners",
+            period: "Jan 2017 - Jun 2019",
+            description:
+              "Automated private equity valuation processes by coding financial models and reports, and developed custom solutions for the alternative asset management industry.",
+          },
+          {
+            role: "Android Developer Intern",
+            company: "WealthyFox",
+            period: "Oct 2016 - Feb 2016",
+            description:
+              "Developed an Android app to track analysts' real-time performance, rate them, and enable one-click broker trading.",
+          },
+          {
+            role: "Android Developer Intern",
+            company: "Machadalo",
+            period: "Dec 2015 - May 2016",
+            description:
+              "Built an Android platform for managing hyperlocal advertising inventories and developed the company's portfolio website using HTML, CSS, and JavaScript.",
+          },
+        ],
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="main-container">
+        <div class="page-container">
+          <div class="page-inner">
+            <div class="resume">
+              <div class="base">
+                <div class="profile">
+                  <div class="photo">
+                    <img src="./banner.jpg" />
+                  </div>
+                  <div class="info">
+                    <small class="job" id="title"></small>
+                    <div class="contact-info">
+                      <div class="address">
+                        <i class="fa fa-map-marker"></i>
+                        <span id="location"></span>
+                      </div>
+                      <div class="email">
+                        <i class="fa fa-envelope"></i>
+                        <span id="email"></span>
+                      </div>
+                      <div class="website">
+                        <i class="fa fa-globe"></i>
+                        <a href="" id="website" target="_blank">
+                          <span id="website-text"></span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="call-container">
+                      <div><i class="fa fa-phone"></i></div>
+                      <div id="phones"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="edu">
+                  <h3><i class="fa fa-graduation-cap"></i>Education</h3>
+                  <ul id="education"></ul>
+                </div>
+                <div class="contact skills-prog">
+                  <h3><i class="fa fa-code"></i>LANGUAGES</h3>
+                  <ul id="languages"></ul>
+                </div>
+                <div class="edu skills-soft">
+                  <h3><i class="fa fa-wrench"></i>Tools</h3>
+                  <div class="tag-cloud" id="tools"></div>
+                </div>
+                <div class="edu achievements">
+                  <h3><i class="fa fa-trophy"></i>Successes</h3>
+                  <ul id="achievements"></ul>
+                </div>
+                <div class="follow">
+                  <div class="box">
+                    <a href="" id="github"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href="" id="linkedin"
+                      ><i class="fa-brands fa-linkedin"></i
+                    ></a>
+                    <a href="" id="stackoverflow" target="_blank"
+                      ><i class="fa-brands fa-stack-overflow"></i
+                    ></a>
+                    <a href="" id="npm" target="_blank"
+                      ><i class="fa-brands fa-node-js"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="func">
+                <div class="about">
+                  <h3 id="name"></h3>
+                  <span id="about"></span>
+                </div>
+
+                <div class="work">
+                  <h3><i class="fa fa-briefcase"></i>Work Experience</h3>
+                  <ul id="experience"></ul>
+                </div>
+                <div class="domain-expertise">
+                  <h3><i class="fa fa-star"></i>Domain Expertise</h3>
+                  <div id="domainExpertise" class="tag-cloud"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="controls-container">
+        <div class="top">
+          <div class="row">
+            <label>Print</label>
+            <label id="pageCount">Print</label>
+          </div>
+          <div class="form">
+            <label>Destination</label>
+            <select class="custom-select" value="pdf" name="destination">
+              <option value="pdf">Save as PDF</option>
+            </select>
+          </div>
+          <div class="form">
+            <label>Pages</label>
+            <select class="custom-select" value="all" name="pages">
+              <option value="all">All</option>
+            </select>
+          </div>
+          <div class="form">
+            <label>Layout</label>
+            <select class="custom-select" value="layout" name="layout">
+              <option value="layout">Portrait</option>
+            </select>
+          </div>
+          <div class="form">
+            <label>Color Mode</label>
+            <select class="custom-select" id="colorMode" name="colorMode">
+              <option value="color">Color</option>
+              <option value="bw">Black & White</option>
+            </select>
+          </div>
+        </div>
+        <div class="bottom">
+          <button id="cancel" class="btn cancel-btn">Cancel</button>
+          <button id="btnPrint" class="btn save-btn">Print</button>
+        </div>
+        <br />
+      </div>
+      <button id="toggleControls" class="hamburger-btn">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // Calculate years of experience
+        function calculateExperience() {
+          const startDate = new Date("Jan 2017");
+          const endDate = new Date();
+          const years = (endDate - startDate) / (1000 * 60 * 60 * 24 * 365);
+          return Math.floor(years);
         }
 
-    </script>
-    <!-- //Meta tag Keywords -->
+        // Update about text with calculated experience
+        const yearsOfExperience = calculateExperience();
+        const aboutText = resume.about.replace(
+          "{{experience}}",
+          yearsOfExperience
+        );
+        document.getElementById("about").textContent = aboutText;
 
-    <!-- Custom-Files -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- Bootstrap-Core-CSS -->
-    <link href="css/simpleLightbox.css" rel='stylesheet' type='text/css' />
-    <link href="css/roadmap.css" rel="stylesheet" type="text/css" />
-    <!-- Banner-Slider-CSS -->
-    <link rel="stylesheet" href="css/snow.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link href='css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <!-- Style-CSS -->
-    <link rel="stylesheet" href="css/fontawesome-all.css">
-    <!-- Font-Awesome-Icons-CSS -->
-    <!-- /Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,400,400i,500,500i,700,700i,900" rel="stylesheet">
-    <!-- //Fonts -->
+        // Set initial state
+        $(".controls-container").addClass("show");
+        $(".main-container").addClass("shift-right");
+        $("#toggleControls").hide();
+        $("#toggleControls i").removeClass("fa-times").addClass("fa-bars");
 
-</head>
-
-<body>
-    <!-- mian-content -->
-    <header class="index-banner" id="home">
-        <!-- nav -->
-        <nav class="main-header d-flex">
-            <div id="brand">
-                <div id="logo">
-                    <a href="index.html">
-                        <i class="fas fa-crosshairs"></i>
-                    </a>
-                </div>
-                <div id="word-mark">
-                    <h1>
-                        <a href="index.html">InfiniteLoops</a>
-                    </h1>
-                </div>
-            </div>
-            <div id="menu">
-                <div id="menu-toggle">
-                    <div id="menu-icon">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-                <ul class="text-center nav-honey">
-                    <li>
-                        <a href="index.html" class="active ">Home</a>
-                    </li>
-                    <li>
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="terms-and-conditions.html">Terms & Conditions</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-        </nav>
-        <!-- //nav -->
-        <!-- banner -->
-        <div class="banner_section">
-            <div class="snow-container">
-                <div class="snow foreground"></div>
-                <div class="snow foreground layered"></div>
-                <div class="snow middleground"></div>
-                <div class="snow middleground layered"></div>
-                <div class="snow background"></div>
-                <div class="snow background layered"></div>
-            </div>
-            <div class="banner-info text-uppercase">
-                <h6 data-aos="fade-right">Introduction</h6>
-                <h5 data-aos="fade-right">Hello, my name is Sufiyan</h5>
-                <h3 data-text="I'm a Programmer">I'm a Programmer</h3>
-                <div class="ban-buttons mt-3" data-aos="fade-right">
-                    <a class="btn work scroll" href="#projects">My Work</a>
-                    <a onclick='window.open("https://docs.google.com/document/d/1nHyJnFA70RWgU6Y_1D3WcMkHn3wYiAr37tzvUee0xts/export?format=pdf");return false;'
-                        class="btn work scroll active" href="#">DOWNLOAD
-                        RESUME</a>
-                </div>
-
-            </div>
-        </div>
-        <!-- //banner -->
-    </header>
-    <!-- //header -->
-    <!--// banner-slider -->
-    <!-- banner-bottom-wthree -->
-    <section class="banner-bottom-wthree py-lg-5 py-md-5 py-4" id="about">
-        <div class="container">
-            <div class="inner-sec-w3ls py-lg-5 py-4">
-                <div class="info-about text-center">
-                    <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3">ABOUT ME</h3>
-                    <div class="row mt-lg-5 mt-3">
-                        <div class="col-lg-4 progress-info-content text-left">
-                            <div class="progress-one my-lg-5" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Web Design</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 80%"
-                                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="progress-one" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">JavaScript</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-                                        style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-4 progress-info-content text-left">
-                            <div class="progress-one my-lg-5" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Python</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar"
-                                        style="width: 90%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress-one" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">React</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar"
-                                        style="width: 85%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 progress-info-content text-left">
-                            <div class="progress-one my-lg-5" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">Angular</h4>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar"
-                                        style="width: 85%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="progress-one" data-aos="fade-up">
-                                <h4 class="progress-tittle-w3">
-                                    Database</h4>
-                                <div class="progress">
-
-                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar"
-                                        style="width: 60%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--// ab -->
-    <!-- /services -->
-    <section class="services py-md-5 py-4" id="services">
-        <div class="container">
-            <div class="inner-sec-w3ls py-md-5 py-4">
-                <h4 class="sub-tittle-w3 text-uppercase text-center">My Services</h4>
-                <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">What i do</h3>
-                <div class="price-right">
-                    <div class="tabs">
-                        <ul class="nav nav-pills my-md-5 my-3 justify-content-center" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#va" role="tab"
-                                    aria-controls="pills-home" aria-selected="true">Visible Alpha</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#ivp" role="tab"
-                                    aria-controls="pills-profile" aria-selected="false">Indus Valley partners</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#wf" role="tab"
-                                    aria-controls="pills-profile" aria-selected="false">Wealthyfox</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#machadalo"
-                                    role="tab" aria-controls="pills-profile" aria-selected="false">Machadalo</a>
-                            </li>
-
-                        </ul>
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="va" role="tabpanel"
-                                aria-labelledby="pills-home-tab">
-                                <div class="menu-grids mt-4">
-                                    <div class="row t-in">
-                                        <div class="col-lg-12 service-in text-center" data-aos="flip-up">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title text-uppercase">Internal Product</p>
-                                                        <p class="card-text">
-                                                            Working on enhancing, upgrading and improving the platform
-                                                            for
-                                                            automating conversion of financial research models into
-                                                            standard
-                                                            normalized data. These models (mainly produced by sell side
-                                                            analysts) come in different formats and need to be converted
-                                                            to
-                                                            standard data for reporting and analytics purposes (mainly
-                                                            consumed
-                                                            by buy side hedge funds, brokers, Fund Funds etc).
-                                                        </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="ivp" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                <div class="menu-grids mt-4">
-                                    <div class="row t-in">
-                                        <div class="col-lg-4 service-in text-center">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Internal Product</h5>
-                                                    <p class="card-text">
-                                                        Automating the private equity valuation
-                                                        process by coding the valuation and waterfall models. First
-                                                        stage
-                                                        is automation, normalization and reporting on financial
-                                                        statements (PCRS) then using the numbers and along with model
-                                                        assumptions to so valuation (DCF, Market Comparable etc).
-                                                        ▪ Created advanced use cases for more technical prospects that
-                                                        can be used for demos
-                                                        ▪ Uses JavaScript with KnockOut.js to achieve MVVM
-                                                        architecture.
-                                                        ▪ Translated design team’s UX wireframes and mockups into
-                                                        responsive, interactive features, using HTML/CSS and
-                                                        JavaScript
-
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4 service-in text-center">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Client</h5>
-                                                    <p class="card-text">
-                                                        Providing custom consulting and product development
-                                                        solutions directed towards the alternative asset management
-                                                        industry.
-                                                        ▪ Worked on Java with SpringBoot and DropWizard framework.
-                                                        Worked on the REST/Web API to create the services and tested
-                                                        on postman and used in JavaScript service calls and bind the
-                                                        data in the UI attributes.
-
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-lg-4 service-in text-center">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Client</h5>
-                                                    <p class="card-text">
-                                                        : Providing custom consulting and product development
-                                                        solutions directed towards the private equity and private debt
-                                                        investment.
-                                                        ▪ involved in designing the user experience interface UI/UX
-                                                        strategy converting findings and requirements into a UI
-                                                        design.
-                                                        ▪ Leveraged reactive programming, unidirectional data flow
-                                                        and centralized state management.
-                                                        ▪ Worked with CSS3 and bootstrap to create responsive web
-                                                        designs for multiple departments/pages.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="wf" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div class="menu-grids mt-4">
-                                    <div class="row t-in">
-                                        <div class="col-lg-12 service-in text-center" data-aos="flip-up">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title text-uppercase">Android</p>
-                                                        <p class="card-text">
-                                                            I was an Android developer, my responsibilities were to
-                                                            create a
-                                                            platform which tracks the real-time performance of analysts
-                                                            and
-                                                            rates them through the mobile application and also
-                                                            aggregates
-                                                            brokers and provides one-click trading.
-                                                        </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="machadalo" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <div class="menu-grids mt-4">
-                                    <div class="row t-in">
-                                        <div class="col-lg-12 service-in text-center" data-aos="flip-up">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title text-uppercase">Android</p>
-                                                        <p class="card-text">
-                                                            ▪ My responsibilities was to build an Intelligent online
-                                                            hyper local
-                                                            advertising tech platform in Android which will enable
-                                                            companies,
-                                                            schools and other industries to manage their hyper local
-                                                            advertising inventories through the mobile application.
-                                                            ▪ I was also worked on designing the company's portfolio
-                                                            website
-                                                            using Html CSS and JavaScript.
-
-                                                        </p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //services -->
-    <!-- /experience -->
-    <section class="experience py-lg-5 py-4" id="experience">
-        <div class="timeline py-lg-5 py-3">
-            <h4 class="sub-tittle-w3 text-uppercase text-center">Experience</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Job & Education</h3>
-            <div id="my-timeline"></div>
-        </div>
-
-    </section>
-    <!-- //experience -->
-    <!--gallery  -->
-    <section class="gallery py-md-5 py-3" id="projects">
-        <div class="gallery-inner container py-md-5 pb-3">
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">My Projects</h3>
-
-            <div class="row">
-                <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                    <div class="section_1_gallery_grid">
-                        <a class=".proj_gallery_grid img"
-                            href="https://github.com/ansarisufiyan777/ngx-material-drawer"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/ngx-material-drawer.svg"></a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a class=".proj_gallery_grid img"
-                            href="https://github.com/ansarisufiyan777/Javascript-Geeks-Web"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/Javascript-Geeks-Web.svg"></a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a class=".proj_gallery_grid img"
-                            href="https://github.com/ansarisufiyan777/py_falcon_pytest_starter"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/py_falcon_pytest_starter.svg"></a>
-                    </div>
-                </div>
-                <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                    <div class="section_1_gallery_grid">
-                        <a class=".proj_gallery_grid img" href="https://github.com/ansarisufiyan777/react-starter"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/react-starter.svg"></a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a class=".proj_gallery_grid img"
-                            href="https://github.com/ansarisufiyan777/Javascript-Geeks"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/Javascript-Geeks.svg"></a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a class=".proj_gallery_grid img"
-                            href="https://github.com/ansarisufiyan777/TickerSentiment"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/TickerSentiment.svg"></a>
-                    </div>
-                </div>
-                <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                    <div class="section_1_gallery_grid">
-                        <a class=".proj_gallery_grid img" href="https://github.com/ansarisufiyan777/Show_Chat"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/Show_Chat.svg"></a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a class=".proj_gallery_grid img" href="https://github.com/ansarisufiyan777/Photography"><img
-                                src="https://gh-card.dev/repos/ansarisufiyan777/Photography.svg"></a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-
-                    </div>
-                </div>
-
-                <!--end portfolio-area -->
-            </div>
-            <!-- //gallery container -->
-        </div>
-    </section>
-    <!-- //gallery -->
-    <!--/stats-->
-    <section class="stats py-lg-5 py-4" id="stats">
-        <div class="gallery-inner container py-md-5 py-4">
-            <div class="row mt-lg-5 stats-con text-white">
-                <div class="col-sm-3 col-6 stats_info counter_grid">
-                    <a href="https://play.google.com/store/apps/developer?id=Asna+Soft">
-
-                        <i class="fab fa-google-play"></i>
-                        <h5 class="text-white" data-aos="fade-right">Google Play</h5>
-                    </a>
-
-                </div>
-                <div class="col-sm-3 col-6 stats_info counter_grid1">
-                    <a href="https://github.com/ansarisufiyan777">
-                        <i class="fab fa-github"></i>
-                        <h5 class="text-white" data-aos="fade-right">Github</h5>
-                    </a>
-
-                </div>
-                <div class="col-sm-3 col-6 stats_info counter_grid">
-                    <a href="https://www.linkedin.com/in/sufiyan-ansari-40b592104/">
-
-                        <i class="fab fa-linkedin"></i>
-                        <h5 class="text-white" data-aos="fade-right">linkedIn</h5>
-                    </a>
-
-                </div>
-                <div class="col-sm-3 col-6 stats_info counter_grid2">
-                    <a href="https://stackoverflow.com/users/3443247/sufiyan-ansari">
-
-                        <i class="fab fa-stack-overflow"></i>
-                        <h5 class="text-white" data-aos="fade-right">Stack Overflow</h5>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /Contact-->
-    <section class="contact py-lg-5 py-md-5 py-3" id="contact">
-        <div class="container">
-            <div class="inner-sec-w3ls py-lg-5 py-3">
-                <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">FIND ME</h3>
-                <div class="address row mt-lg-5">
-
-                    <div class="col-md-4 address-grid" data-aos="flip-up">
-                        <div class="address-info">
-                            <div class="address-left text-center">
-                                <i class="far fa-map"></i>
-                            </div>
-                            <div class="address-right text-center">
-                                <h6 class="my-3">Address</h6>
-                                <p> Mumbai, India
-
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 address-grid" data-aos="flip-up">
-                        <div class="address-info">
-                            <div class="address-left text-center">
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <div class="address-right text-center">
-                                <h6 class="my-3">Email</h6>
-                                <p>Email :
-                                    <a href="mailto:ansarisufiyan777@gmail.com"> ansarisufiyan777@gmail.com</a>
-
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 address-grid" data-aos="flip-up">
-                        <div class="address-info">
-                            <div class="address-left text-center">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <div class="address-right text-center">
-                                <h6 class="my-3">Phone</h6>
-                                <p>+91 987 050 1929</p>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //Contact -->
-    <!--/footer-->
-    <footer class="footer text-left">
-        <div class="container py-4 py-sm-5">
-
-            <div class="row py-sm-4 py-3">
-                <div class="col-lg-2 col-md-4">
-                    <ul class="list-footer" data-aos="fade-up">
-                        <li>
-                            <a href="index.html" class="nav-link scroll">
-                                Home
-                            </a>
-                        </li>
-
-                        <li class="my-2">
-                            <a href="privacy-policy.html" class="nav-link scroll">
-                                Privacy Policy
-                            </a>
-                        </li>
-                        <li class="my-2">
-                            <a href="terms-and-conditions.html" class="nav-link scroll">
-                                Terms & Conditions
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="offset-lg-2"></div>
-                <div class="col-lg-6 footer-end-grid mt-md-0 mt-sm-5" data-aos="fade-up">
-                    <h2>
-                        <a href="index.html">
-                            <i class="fas fa-crosshairs"></i> InfiniteLoops
-                        </a>
-                    </h2>
-                </div>
-            </div>
-            <hr>
-            <div class="d-flex justify-content-between pt-lg-3  footer-bottom-cpy">
-                <div class="copy-right-w3ls">
-                    <p>© 2021 InfiniteLoops. All rights reserved
-                    </p>
-                </div>
-                <div class="social-content pb-md-0 pb-4">
-                    <ul class="social-icons text-center d-flex">
-                        <li class="ml-lg-5">
-                            <a href="https://play.google.com/store/apps/developer?id=Asna+Soft">
-                                <i class="fab fa-google-play"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/ansarisufiyan777">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/sufiyan-ansari-40b592104/">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/users/3443247/sufiyan-ansari">
-                                <i class="fab fa-stack-overflow"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.npmjs.com/settings/ansarisufiyan/packages">
-                                <i class="fab fa-npm"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--//footer-->
-
-    <!--model-forms-->
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <!-- banner-type-text -->
-    <script src='js/aos.js'></script>
-    <script>
-        AOS.init({
-            easing: 'ease-out-back',
-            duration: 1000
+        $("#toggleControls").on("click", function () {
+          const controls = $(".controls-container");
+          const mainContent = $(".main-container");
+          const button = $(this);
+          if (controls.hasClass("show")) {
+            controls.removeClass("show");
+            mainContent.removeClass("shift-right");
+            button.show();
+            // Pull animation
+            mainContent.css({
+              transition: "margin-right 0.3s ease-out",
+              "margin-right": "0",
+            });
+          } else {
+            controls.addClass("show");
+            mainContent.addClass("shift-right");
+            button.hide();
+            // Push animation
+            mainContent.css({
+              transition: "margin-right 0.3s ease-in",
+              "margin-right": "440px",
+            });
+          }
         });
 
-    </script>
-    <!-- sticky nav bar-->
-    <script>
-        $(() => {
-
-            //On Scroll Functionality
-            $(window).scroll(() => {
-                var windowTop = $(window).scrollTop();
-                windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
-                windowTop > 100 ? $('ul.nav-honey').css('top', '50px') : $('ul.nav-honey').css('top', '160px');
-            });
-
-            //Click Logo To Scroll To Top
-            $('#logo').on('click', () => {
-                $('html,body').animate({
-                    scrollTop: 0
-                }, 500);
-            });
-
-            //            //Smooth Scrolling Using Navigation Menu
-            //            $('a[href*="#"]').on('click', function(e) {
-            //                $('html,body').animate({
-            //                    scrollTop: $($(this).attr('href')).offset().top - 100
-            //                }, 500);
-            //                e.preventDefault();
-            //            });
-
-            //Toggle Menu
-            $('#menu-toggle').on('click', () => {
-                $('#menu-toggle').toggleClass('closeMenu');
-                $('ul').toggleClass('showMenu');
-
-                $('li').on('click', () => {
-                    $('ul').removeClass('showMenu');
-                    $('#menu-toggle').removeClass('closeMenu');
-                });
-            });
-
+        $("#cancel").on("click", function () {
+          const mainContent = $(".main-container");
+          $(".controls-container").removeClass("show");
+          mainContent.removeClass("shift-right");
+          $("#toggleControls").show();
+          // Pull animation
+          mainContent.css({
+            transition: "margin-right 0.3s ease-out",
+            "margin-right": "0",
+          });
         });
 
-    </script>
-    <!-- //sticky nav bar -->
-    <!-- Include jQuery Timeline Plugin -->
-    <script src="js/jquery.roadmap.js"></script>
+        $("#btnPrint").on("click", function (e) {
+          // Hide the controls panel first
+          const mainContent = $(".main-container");
+          $(".controls-container").removeClass("show");
+          mainContent.removeClass("shift-right");
+          $("#toggleControls").show();
 
-    <script>
-        $(document).ready(function () {
+          // Pull animation
+          mainContent.css({
+            transition: "margin-right 0.3s ease-out",
+            "margin-right": "0",
+          });
 
-            var events = [{
-                date: 'Jun 2019 - Present',
-                content: 'Visible Alpha <small>Software Engineer, Fullstack</small>'
-            },
-            {
-                date: 'Jan 2017 - Jun 2019',
-                content: 'Indus Valley Partners <small>Software Engineer, Fullstack</small>'
-            },
-            {
-                date: 'Oct 2016 - Dec 2016',
-                content: 'WealthyFox <small>Software Engineer, Interneship</small>'
-            },
-            {
-                date: 'Dec 2015 - May 2016',
-                content: 'Machadalo <small>Software Engineer, Internship</small>'
-            },
-            {
-                date: 'Jul 2014 - Jul 2017',
-                content: 'Mumbai university <small>Masters in Computer Application</small>'
-            },
-            {
-                date: 'Jul 2011 - Jul 2014',
-                content: 'Mumbai university  <small>Graduation in Information Technology</small>'
-            },
-            {
-                date: 'Jul 2009 - Jul 2011',
-                content: 'Mumbai university <small>HSC, Science</small>'
-            },
-
-            {
-                date: 'May 2008',
-                content: 'Mumbai university <small>SSC</small>'
-            }
-            ];
-
-            $('#my-timeline').roadmap(events, {
-                eventsPerSlide: 6,
-                slide: 1,
-                prevArrow: '<i class="fas fa-chevron-left"></i>',
-                nextArrow: '<i class="fas fa-chevron-right"></i>'
-            });
+          // Wait for the panel to hide before printing
+          setTimeout(function () {
+            window.print();
+          }, 300);
         });
 
-    </script>
-    <!-- simpleLightbox -->
-    <script src="js/simpleLightbox.js"></script>
-    <script>
-        $('.proj_gallery_grid a').simpleLightbox();
+        var page = 1;
+        $("#pageCount").html(page + " page");
 
-    </script>
-    <!-- //simpleLightbox -->
-    <!-- stats -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.countup.js"></script>
-    <script>
-        $('.counter').countUp();
+        // Populate data from resume object
+        document.getElementById("name").textContent = resume.name;
+        document.getElementById("title").textContent = resume.title;
 
-    </script>
-    <!-- //stats -->
-
-    <!--/ start-smoth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 900);
-            });
+        // Populate phones
+        const phonesContainer = document.getElementById("phones");
+        resume.contact.phones.forEach((phone) => {
+          const span = document.createElement("span");
+          span.className = "call";
+          span.textContent = phone;
+          phonesContainer.appendChild(span);
         });
 
-    </script>
-    <script>
-        $(document).ready(function () {
-            /*
-                                    var defaults = {
-                                          containerID: 'toTop', // fading element id
-                                        containerHoverID: 'toTopHover', // fading element hover id
-                                        scrollSpeed: 1200,
-                                        easingType: 'linear' 
-                                     };
-                                    */
+        // Populate contact info
+        document.getElementById("location").textContent =
+          resume.contact.location;
+        document.getElementById("email").textContent = resume.contact.email;
+        document.getElementById("website").href = resume.contact.website;
+        document.getElementById("website-text").textContent =
+          resume.contact.website.replace("https://", "");
 
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
-
+        // Populate education
+        const educationList = document.getElementById("education");
+        resume.education.forEach((edu) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <span>${edu.degree}</span>
+            <span>${edu.institution}</span>
+            <div class="edu-info">
+              <small>CGPA: ${edu.cgpa}</small>
+              <small>${edu.years}</small>
+            </div>
+          `;
+          educationList.appendChild(li);
         });
 
+        // Populate languages
+        const languagesList = document.getElementById("languages");
+        resume.languages.forEach((lang) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <span>${lang.name}</span>
+            <div class="skills-bar">
+              <div class="bar" style="width: ${lang.level}%"></div>
+            </div>
+          `;
+          languagesList.appendChild(li);
+        });
+
+        // Populate tools
+        const toolsContainer = document.getElementById("tools");
+        resume.tools.forEach((tool) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = tool;
+          toolsContainer.appendChild(span);
+        });
+
+        // Populate social links
+        document.getElementById("github").href = resume.social.github;
+        document.getElementById("linkedin").href = resume.social.linkedin;
+        document.getElementById("stackoverflow").href =
+          resume.social.stackoverflow;
+        document.getElementById("npm").href = resume.social.npm;
+
+        // Populate domain expertise
+        const domainExpertiseContainer =
+          document.getElementById("domainExpertise");
+        resume.domainExpertise.forEach((domain) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = domain;
+          domainExpertiseContainer.appendChild(span);
+        });
+
+        // Populate successes
+        const successesList = document.getElementById("achievements");
+        resume.successes.forEach((success) => {
+          const li = document.createElement("li");
+          if (success.link) {
+            const [prefix, linkText] = success.title.split(":");
+            li.innerHTML = `<div style="display: flex; color: black !important;"><span style="color: black !important;">${prefix}:</span><a href="${success.link}" target="_blank" style="color: black !important; text-decoration: none;">${linkText}</a></div>`;
+          } else {
+            li.innerHTML = `<div style="display: flex; color: black !important;"><span style="color: black !important;">${success.title}</span></div>`;
+          }
+          successesList.appendChild(li);
+        });
+
+        // Populate experience
+        const experienceList = document.getElementById("experience");
+        resume.experience.forEach((exp) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <span>${exp.company} - ${exp.role}</span>
+            <small>${exp.period}</small>
+            ${exp.description ? `<p>${exp.description}</p>` : ""}
+          `;
+          experienceList.appendChild(li);
+        });
+
+        // Add color mode change handler
+        $("#colorMode").on("change", function () {
+          const mode = $(this).val();
+          if (mode === "bw") {
+            $(".resume").addClass("bw-mode");
+          } else {
+            $(".resume").removeClass("bw-mode");
+          }
+        });
+      });
     </script>
-    <!--// end-smoth-scrolling -->
-
-    <!-- //js -->
-
-    <script src="js/bootstrap.js"></script>
-
-</body>
-
+  </body>
 </html>

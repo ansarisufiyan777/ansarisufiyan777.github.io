@@ -1,0 +1,348 @@
+@import url("//fonts.googleapis.com/css?family=Montserrat:400,700");
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #5f6369;
+  color: #414142;
+  font: 12pt "Montserrat", sans-serif;
+  -webkit-print-color-adjust: exact !important;
+}
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.page-container {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 0mm;
+  margin: 10mm auto;
+  border-radius: 1px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.page-inner {
+  padding: 0;
+  height: 297mm;
+}
+
+.page-inner table,
+.page-inner td,
+.page-inner th {
+  padding: 2mm;
+  border-collapse: collapse;
+  border: 1px solid #414142;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+  .page-container {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+  .controls-container {
+    display: none !important;
+  }
+  .hamburger-btn {
+    display: none !important;
+  }
+  .main-container, .main-container.shift-right {
+    margin-right: 0 !important;
+    transition: none !important;
+  }
+}
+
+.controls-container {
+  color: #414142;
+  background: #292a2d;
+  padding: 40px 24px;
+  font-size: 16px;
+  flex: 0 30em;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(0);
+}
+
+@media print {
+  .controls-container {
+    display: none !important;
+  }
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.main-container {
+  flex: 1;
+  overflow-y: auto;
+  transition: margin-right 0.3s ease;
+}
+
+.main-container.shift-right {
+  margin-right: 440px;
+}
+
+.custom-select-container {
+  position: relative;
+  display: inline-block;
+  width: 150px; /* Adjust width if needed */
+}
+
+.custom-select {
+  appearance: none; /* Remove default select styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #2e2e2e; /* Dark background */
+  border: 1px solid #555; /* Grey border */
+  color: white; /* White text */
+  padding: 10px 40px 10px 10px; /* Padding with space for the icon */
+  font-size: 16px;
+  border-radius: 10px; /* Rounded corners */
+  width: 15vw;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+}
+
+.custom-select::-ms-expand {
+  display: none;
+}
+
+/* Custom dropdown arrow */
+.custom-select-container::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Hover effect */
+.custom-select:hover {
+  border-color: #777;
+}
+.top {
+  flex: 1;
+}
+.bottom {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.btn {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded edges */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #3a8ace; /* Blue border */
+  color: #3a8ace; /* Blue text */
+}
+
+.cancel-btn:hover {
+  background-color: rgba(
+    58,
+    138,
+    206,
+    0.1
+  ); /* Light blue background on hover */
+}
+
+.save-btn {
+  background-color: #b3c9f9; /* Light blue background */
+  border: none; /* No border */
+  color: #1f3b71; /* Dark blue text */
+  border: 2px solid transparent; /* Invisible border for spacing consistency */
+}
+
+.save-btn:hover {
+  background-color: #aac1f4; /* Slightly darker blue on hover */
+  border: 2px solid #b3c9f9; /* Matches the background, subtle effect */
+}
+
+/* Timeline View Styles */
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #8d9e78;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 3px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #8d9e78;
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item.left::after {
+  right: -12px;
+}
+
+.timeline-item.right::after {
+  left: -12px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-content h3 {
+  color: #3d405b;
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+
+.timeline-content h4 {
+  color: #8d9e78;
+  margin: 0 0 10px 0;
+  font-size: 1em;
+}
+
+.timeline-date {
+  color: #666;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.timeline-description {
+  color: #444;
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.timeline-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-tag {
+  background-color: #f0f0f0;
+  color: #3d405b;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: #8d9e78;
+  color: white;
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+  .timeline-container::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item.right {
+    left: 0;
+  }
+  
+  .timeline-item.left::after,
+  .timeline-item.right::after {
+    left: 18px;
+  }
+}
+
+/* Domain Expertise Styles */
+.domain-expertise {
+  margin: 20px 0;
+}
+
+@media print {
+  .tag {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
