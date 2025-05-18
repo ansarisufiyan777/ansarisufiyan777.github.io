@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="cv.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -38,13 +39,16 @@
           },
         ],
         languages: [
-          { name: "Python", level: 85 },
+          { name: "Python", level: 80 },
           { name: "React", level: 90 },
           { name: "Angular", level: 80 },
-          { name: "JavaScript", level: 70 },
+          { name: "JavaScript", level: 90 },
+          { name: "NestJS/NextJS", level: 70 },
           { name: "SQL", level: 60 },
         ],
         tools: [
+          "Sentry",
+          "DataDog",
           "Docker",
           "Git",
           "Celery",
@@ -56,6 +60,7 @@
           "Slack",
           "Notion",
           "Figma",
+          "Nx",
         ],
         social: {
           github: "https://github.com/ansarisufiyan777",
@@ -409,7 +414,9 @@
           li.innerHTML = `
             <span>${lang.name}</span>
             <div class="skills-bar">
-              <div class="bar" style="width: ${lang.level}%"></div>
+              <div class="bar" style="width: ${lang.level}%">
+                <span class="tooltip">${lang.level}%</span>
+              </div>
             </div>
           `;
           languagesList.appendChild(li);
