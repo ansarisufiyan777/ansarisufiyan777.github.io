@@ -92,17 +92,19 @@
             title: "VA's Hackathon 2020 Winner",
           },
         ],
-        about:
-          "Fullstack engineer with {{experience}}+ years of experience in building scalable web applications, specializing in React, Python, and cloud technologies. Proven track record in e-commerce, fintech, and AI solutions.",
+        about: [
+          "Senior Software Engineer with {{experience}}+ years of experience architecting and delivering high-performance web applications at scale",
+          "Expert in modern JavaScript/TypeScript ecosystems (React, Node.js, Next.js)",
+          "Python backend development and cloud-native solutions (AWS/GCP)",
+          "Successfully led development of enterprise applications serving 100K+ users",
+          "Expertise in microservices, real-time systems, and AI integration",
+          "Proven ability to mentor teams and optimize performance",
+          "Deliver complex projects on time with high quality standards",
+        ],
         domainExpertise: [
           "E-commerce & Customer Support",
           "Fintech & Trading Systems",
           "AI & Conversational Systems",
-          "Enterprise Solutions",
-          "Real-time Analytics",
-          "Microservices Architecture",
-          "Cloud Infrastructure",
-          "Mobile Development",
           "Space Technology",
         ],
         experience: [
@@ -314,11 +316,25 @@
 
         // Update about text with calculated experience
         const yearsOfExperience = calculateExperience();
-        const aboutText = resume.about.replace(
-          "{{experience}}",
-          yearsOfExperience
-        );
-        document.getElementById("about").textContent = aboutText;
+
+        // Handle about as array of bullet points
+        if (Array.isArray(resume.about)) {
+          const aboutList = document.getElementById("about");
+          aboutList.innerHTML = ""; // Clear existing content
+
+          resume.about.forEach((point) => {
+            const li = document.createElement("li");
+            li.textContent = point.replace("{{experience}}", yearsOfExperience);
+            aboutList.appendChild(li);
+          });
+        } else {
+          // Fallback for string format
+          const aboutText = resume.about.replace(
+            "{{experience}}",
+            yearsOfExperience
+          );
+          document.getElementById("about").textContent = aboutText;
+        }
 
         // Set initial state
         $(".controls-container").addClass("show");
@@ -480,8 +496,10 @@
         resume.experience.forEach((exp) => {
           const li = document.createElement("li");
           li.innerHTML = `
+          <div style="display: flex;justify-content: space-between;">
             <span>${exp.company} - ${exp.role}</span>
             <small>${exp.period}</small>
+          </div>
             ${exp.description ? `<p>${exp.description}</p>` : ""}
           `;
           experienceList.appendChild(li);
