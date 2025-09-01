@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Binary Tree SVG</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        margin: 0;
+        padding: 24px;
+      }
+      #wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .edge {
+        stroke: #9aa0a6;
+        stroke-width: 2;
+      }
+      .node {
+        fill: #fff;
+        stroke: #2f2f2f;
+        stroke-width: 2;
+      }
+      .label {
+        font-weight: 600;
+        font-size: 14px;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+    </style>
+    <script src="./main.js"></script>
+    <script src="./currencyConversion.rippling.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <h2>Binary Tree (Node → SVG)</h2>
+      <div id="app"></div>
+    </div>
+
+    <script>
+      // Example tree matching your figure
+      const root = window.tree;
+
+      // --- Layout: simple tidy in-order layout (no queue) ---
+      function layoutTree(root, dx = 90, dy = 90) {
+        // 1) Assign x via in-order traversal index; y = depth
+        let cursor = 0;
+        function assign(node, depth) {
+          if (!node) return;
+          assign(node.left, depth + 1);
+          node._xIndex = cursor++;
+          node._depth = depth;
+          assign(node.right, depth + 1);
+        }
+        assign(root, 0);
+
+        // 2) Gather nodes to compute extents
+        const nodes = [];
+        (function collect(node) {
+          if (!node) return;
+          nodes.push(node);
+          collect(node.left);
+          collect(node.right);
+        })(root);
+
+        if (nodes.length === 0)
+          return { nodes: [], edges: [], width: 0, height: 0 };
+
+        const minX = Math.min(...nodes.map((n) => n._xIndex));
+        const maxX = Math.max(...nodes.map((n) => n._xIndex));
+        const maxDepth = Math.max(...nodes.map((n) => n._depth));
+
+        // 3) Normalize x so the leftmost starts at 0, then scale by dx/dy
+        nodes.forEach((n) => {
+          n._x = (n._xIndex - minX) * dx;
+          n._y = n._depth * dy;
+        });
+
+        // 4) Build edges
+        const edges = [];
+        (function edgesCollect(node) {
+          if (!node) return;
+          if (node.left) edges.push([node, node.left]);
+          if (node.right) edges.push([node, node.right]);
+          edgesCollect(node.left);
+          edgesCollect(node.right);
+        })(root);
+
+        const width = (maxX - minX + 1) * dx;
+        const height = (maxDepth + 1) * dy + 60; // bottom padding
+        return { nodes, edges, width, height };
+      }
+
+      // --- Renderer: nodes + straight edges ---
+      function renderSVG(rootNode, mount, { dx = 120, dy = 110, r = 20 } = {}) {
+        mount.innerHTML = "";
+        if (!rootNode) return;
+
+        const { nodes, edges, width, height } = layoutTree(rootNode, dx, dy);
+
+        const svg = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "svg"
+        );
+        svg.setAttribute("viewBox", `-40 -20 ${width + 80} ${height + 40}`);
+
+        // Draw edges first
+        edges.forEach(([p, c]) => {
+          const line = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "line"
+          );
+          line.setAttribute("x1", p._x);
+          line.setAttribute("y1", p._y);
+          line.setAttribute("x2", c._x);
+          line.setAttribute("y2", c._y);
+          line.setAttribute("class", "edge");
+          svg.appendChild(line);
+        });
+
+        // Draw nodes
+        nodes.forEach((n) => {
+          const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          const circle = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "circle"
+          );
+          circle.setAttribute("cx", n._x);
+          circle.setAttribute("cy", n._y);
+          circle.setAttribute("r", r);
+          circle.setAttribute("class", "node");
+          g.appendChild(circle);
+
+          const text = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "text"
+          );
+          text.setAttribute("x", n._x);
+          text.setAttribute("y", n._y + 1); // tiny optical tweak
+          text.setAttribute("class", "label");
+          text.textContent = n.value;
+          g.appendChild(text);
+
+          svg.appendChild(g);
+        });
+
+        mount.appendChild(svg);
+      }
+
+      // Render the example
+      renderSVG(root, document.getElementById("app"));
+
+      // Expose for your own data:
+      //   renderSVG(yourRoot, document.getElementById('app'), { dx: 120, dy: 110, r: 22 })
+      window.renderSVG = renderSVG;
+    </script>
+  </body>
+</html>
