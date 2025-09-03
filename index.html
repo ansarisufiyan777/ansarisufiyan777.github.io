@@ -33,7 +33,7 @@
         name: "Sufiyan Nafees Ansari",
         title: "Fullstack Engineer",
         contact: {
-          phones: ["🇮🇳 (+91) 98705 01929", "🇫🇷 (+33) 06 64 98 84 68"],
+          phones: ["🇫🇷 (+33) 06 64 98 84 68"],
           location: "Strasbourg, France",
           email: "ansarisufiyan777@gmail.com",
           website: "https://sufiyan.xyz",
@@ -92,15 +92,8 @@
             title: "VA's Hackathon 2020 Winner",
           },
         ],
-        about: [
-          "Senior Software Engineer with {{experience}}+ years of experience architecting and delivering high-performance web applications at scale",
-          "Expert in modern JavaScript/TypeScript ecosystems (React, Node.js, Next.js)",
-          "Python backend development and cloud-native solutions (AWS/GCP)",
-          "Successfully led development of enterprise applications serving 100K+ users",
-          "Expertise in microservices, real-time systems, and AI integration",
-          "Proven ability to mentor teams and optimize performance",
-          "Deliver complex projects on time with high quality standards",
-        ],
+        about:
+          "Senior Software Engineer with <strong>{{experience}}+ years</strong> of experience architecting and delivering <strong>high-performance web applications at scale</strong>. Expert in modern <strong>JavaScript/TypeScript ecosystems</strong> (<strong>React, Node.js, Next.js</strong>) and <strong>Python backend development</strong> with <strong>cloud-native solutions</strong> (<strong>AWS/GCP</strong>).",
         domainExpertise: [
           "E-commerce & Customer Support",
           "Fintech & Trading Systems",
@@ -111,58 +104,37 @@
           {
             role: "Senior Full Stack Engineer",
             company: "Gorgias",
-            period: "May 2023 - Present",
+            period: "May-23 - Present",
             description:
-              "At Gorgias, I work as a fullstack engineer, building and scaling features across both backend and frontend. I collaborate with product and engineering teams to deliver reliable, high-quality experiences that empower merchants and improve customer support workflows.",
+              "Fullstack engineer building and scaling features across <strong>backend and frontend</strong> systems. Collaborate with product and engineering teams to deliver reliable, high-quality experiences that empower merchants and improve customer support workflows.<br/><br/><strong>Focus areas:</strong> React, Node.js, microservices, and real-time systems",
           },
           {
-            role: "Software Engineer II",
-            company: "Leanspace",
-            period: "Aug 2022 - May 2023",
+            role: "Senior Software Engineer",
+            company: "Contractor",
+            period: "Sep-21 - May-23",
             description:
-              "Worked as a senior frontend react engineer on the core product and continued with designing the solution for onboarding customers.",
-          },
-          {
-            role: "Software Engineer II",
-            company: "e-bot7",
-            period: "Feb 2022 - Jul 2022",
-            description:
-              "Worked on Micro frontend, and Python Serverless framework with AWS cloud platform to achieve the conversational AI bot engine functionality",
-          },
-          {
-            role: "Technical Architect",
-            company: "Colgate-Palmolive",
-            period: "Sep 2021 - Feb 2022",
-            description:
-              "Worked on React, and Python to manage the SKU's pricings across 200 countries in the world.",
+              "Delivered full-stack solutions across <strong>space technology</strong> (Leanspace), <strong>AI/ML platforms</strong> (e-bot7), and <strong>global consumer goods</strong> (Colgate-Palmolive).<br/><br/><strong>Key achievements:</strong><br/>• Architected micro frontend systems<br/>• Built conversational AI engines with Python Serverless on AWS<br/>• Managed SKU pricing systems across 200+ countries using React and Python",
           },
           {
             role: "Software Engineer II",
             company: "Visible Alpha",
-            period: "Jun 2019 - Aug 2021",
+            period: "Jun-19 - Aug-21",
             description:
-              "Worked on React & Python to manage the Buy/Sell side entitlements Dockerised everything into a Linux container. Celery (RabbitMQ) to process millions of tasks. Worked on Salesforce data integration with the Insights Product. Initiated the React Native Mobile App for Insights product",
+              "Developed <strong>React & Python</strong> solutions for Buy/Sell side entitlements management. <strong>Dockerized</strong> applications into Linux containers and implemented <strong>Celery (RabbitMQ)</strong> to process millions of tasks.<br/><br/><strong>Key contributions:</strong><br/>• Salesforce data integration with Insights Product<br/>• Initiated React Native Mobile App for Insights product",
           },
           {
             role: "Software Engineer",
             company: "Indus Valley Partners",
-            period: "Jan 2017 - Jun 2019",
+            period: "Jan-17 - Jun-19",
             description:
               "Automated private equity valuation processes by coding financial models and reports, and developed custom solutions for the alternative asset management industry.",
           },
           {
-            role: "Android Developer Intern",
-            company: "WealthyFox",
-            period: "Oct 2016 - Feb 2016",
+            role: "Android Developer",
+            company: "Internship",
+            period: "Dec-15 - Feb-16",
             description:
-              "Developed an Android app to track analysts' real-time performance, rate them, and enable one-click broker trading.",
-          },
-          {
-            role: "Android Developer Intern",
-            company: "Machadalo",
-            period: "Dec 2015 - May 2016",
-            description:
-              "Built an Android platform for managing hyperlocal advertising inventories and developed the company's portfolio website using HTML, CSS, and JavaScript.",
+              "Developed mobile applications for <strong>fintech</strong> (WealthyFox) and <strong>advertising technology</strong> (Machadalo) companies.<br/><br/><strong>Key projects:</strong><br/>• Real-time analyst performance tracking apps with broker trading integration<br/>• Hyperlocal advertising inventory management platforms<br/>• Technologies: Android, HTML, CSS, and JavaScript",
           },
         ],
       };
@@ -317,30 +289,18 @@
         // Update about text with calculated experience
         const yearsOfExperience = calculateExperience();
 
-        // Handle about as array of bullet points
-        if (Array.isArray(resume.about)) {
-          const aboutList = document.getElementById("about");
-          aboutList.innerHTML = ""; // Clear existing content
-
-          resume.about.forEach((point) => {
-            const li = document.createElement("li");
-            li.textContent = point.replace("{{experience}}", yearsOfExperience);
-            aboutList.appendChild(li);
-          });
-        } else {
-          // Fallback for string format
-          const aboutText = resume.about.replace(
-            "{{experience}}",
-            yearsOfExperience
-          );
-          document.getElementById("about").textContent = aboutText;
-        }
+        // Handle about as string paragraph
+        const aboutText = resume.about.replace(
+          "{{experience}}",
+          yearsOfExperience
+        );
+        document.getElementById("about").innerHTML = aboutText;
 
         // Set initial state
-        $(".controls-container").addClass("show");
-        $(".main-container").addClass("shift-right");
-        $("#toggleControls").hide();
-        $("#toggleControls i").removeClass("fa-times").addClass("fa-bars");
+        // $(".controls-container").addClass("show");
+        // $(".main-container").addClass("shift-right");
+        // $("#toggleControls").hide();
+        // $("#toggleControls i").removeClass("fa-times").addClass("fa-bars");
 
         $("#toggleControls").on("click", function () {
           const controls = $(".controls-container");
@@ -497,7 +457,7 @@
           const li = document.createElement("li");
           li.innerHTML = `
           <div style="display: flex;justify-content: space-between;">
-            <span>${exp.company} - ${exp.role}</span>
+            <span><strong>${exp.company}</strong> - ${exp.role}</span>
             <small>${exp.period}</small>
           </div>
             ${exp.description ? `<p>${exp.description}</p>` : ""}
