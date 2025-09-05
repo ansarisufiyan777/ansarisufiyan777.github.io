@@ -306,6 +306,15 @@
           const controls = $(".controls-container");
           const mainContent = $(".main-container");
           const button = $(this);
+
+          // Track toggle controls event
+          gtag("event", "toggle_controls", {
+            event_category: "ui_interaction",
+            event_label: controls.hasClass("show")
+              ? "hide_controls"
+              : "show_controls",
+          });
+
           if (controls.hasClass("show")) {
             controls.removeClass("show");
             mainContent.removeClass("shift-right");
@@ -328,6 +337,12 @@
         });
 
         $("#cancel").on("click", function () {
+          // Track cancel button event
+          gtag("event", "cancel_controls", {
+            event_category: "ui_interaction",
+            event_label: "hide_controls",
+          });
+
           const mainContent = $(".main-container");
           $(".controls-container").removeClass("show");
           mainContent.removeClass("shift-right");
@@ -340,6 +355,12 @@
         });
 
         $("#btnPrint").on("click", function (e) {
+          // Track print button event
+          gtag("event", "print_resume", {
+            event_category: "user_action",
+            event_label: "print_button_clicked",
+          });
+
           // Hide the controls panel first
           const mainContent = $(".main-container");
           $(".controls-container").removeClass("show");
@@ -379,6 +400,14 @@
           resume.contact.location;
         document.getElementById("email").textContent = resume.contact.email;
         document.getElementById("website").href = resume.contact.website;
+        document
+          .getElementById("website")
+          .addEventListener("click", function () {
+            gtag("event", "external_link_click", {
+              event_category: "contact",
+              event_label: "personal_website",
+            });
+          });
         document.getElementById("website-text").textContent =
           resume.contact.website.replace("https://", "");
 
@@ -421,12 +450,45 @@
           toolsContainer.appendChild(span);
         });
 
-        // Populate social links
+        // Populate social links with analytics tracking
         document.getElementById("github").href = resume.social.github;
+        document
+          .getElementById("github")
+          .addEventListener("click", function () {
+            gtag("event", "social_click", {
+              event_category: "social_media",
+              event_label: "github",
+            });
+          });
+
         document.getElementById("linkedin").href = resume.social.linkedin;
+        document
+          .getElementById("linkedin")
+          .addEventListener("click", function () {
+            gtag("event", "social_click", {
+              event_category: "social_media",
+              event_label: "linkedin",
+            });
+          });
+
         document.getElementById("stackoverflow").href =
           resume.social.stackoverflow;
+        document
+          .getElementById("stackoverflow")
+          .addEventListener("click", function () {
+            gtag("event", "social_click", {
+              event_category: "social_media",
+              event_label: "stackoverflow",
+            });
+          });
+
         document.getElementById("npm").href = resume.social.npm;
+        document.getElementById("npm").addEventListener("click", function () {
+          gtag("event", "social_click", {
+            event_category: "social_media",
+            event_label: "npm",
+          });
+        });
 
         // Populate domain expertise
         const domainExpertiseContainer =
@@ -445,6 +507,17 @@
           if (success.link) {
             const [prefix, linkText] = success.title.split(":");
             li.innerHTML = `<div style="display: flex; color: black !important;"><span style="color: black !important;">${prefix}:</span><a href="${success.link}" target="_blank" style="color: black !important; text-decoration: none;">${linkText}</a></div>`;
+
+            // Add analytics tracking for success links
+            const link = li.querySelector("a");
+            if (link) {
+              link.addEventListener("click", function () {
+                gtag("event", "external_link_click", {
+                  event_category: "achievements",
+                  event_label: success.title.toLowerCase().replace(/\s+/g, "_"),
+                });
+              });
+            }
           } else {
             li.innerHTML = `<div style="display: flex; color: black !important;"><span style="color: black !important;">${success.title}</span></div>`;
           }
@@ -468,6 +541,13 @@
         // Add color mode change handler
         $("#colorMode").on("change", function () {
           const mode = $(this).val();
+
+          // Track color mode change event
+          gtag("event", "color_mode_change", {
+            event_category: "ui_interaction",
+            event_label: mode === "bw" ? "black_white_mode" : "color_mode",
+          });
+
           if (mode === "bw") {
             $(".resume").addClass("bw-mode");
           } else {
